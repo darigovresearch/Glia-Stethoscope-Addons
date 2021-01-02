@@ -1,4 +1,4 @@
-$outside_width = 42.25/2; //Radius of outside wall (mm)
+$outside_width = 42.125/2; //Radius of outside wall (mm)
 
 module reference_head($fn=360) {
     // reference stethoscope head as it was too complex to load into memory
