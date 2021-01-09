@@ -2,6 +2,7 @@ $tolerence = 0.2; //Tolerence for mounting parts
 
 //include <stethoscope_addon_mount.scad>;
 use <utilities.scad>
+use <stethoscope_addon_base.scad>
 
 module clip($fn = 36){
     //translate([0, 0, -14.5]){
@@ -43,26 +44,10 @@ module clip($fn = 36){
             cube([15, 4, 5], center = true);
         }
     }
-    
-    
-    
-
-
 }
 
-translate([3, 0, -5/2]) {
-   keyway(5 - $tolerence, 20 - $tolerence, 15 - $tolerence, 29 + 3);
-}
-
-// cube that hangs over the mount
-translate([19.5 + $tolerence, 0, -4.5 - $tolerence/2]) {
-   cube([3, 20, 9], center = true);
-}
-
-// cube that extends down for the microphone
-translate([6, 0, -8 - $tolerence/2]) {
-   cube([26, 8, 2], center = true);
-}
+// base to mount to the addon
+addon_base(8, 26.5);
 
 clip();
 // mirror([0,1,0]) clip();
