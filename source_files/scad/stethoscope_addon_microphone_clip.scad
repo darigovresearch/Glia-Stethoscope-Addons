@@ -47,7 +47,7 @@ module clip($fn = 36){
 }
 
 // base to mount to the addon
-addon_base(8, 26.5);
+addon_base(20, 9, 3, 8, 26.5);
 
 clip();
 // mirror([0,1,0]) clip();
