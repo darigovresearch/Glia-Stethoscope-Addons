@@ -1,69 +1,7 @@
 $tolerence = 0.2; //Tolerence for mounting parts
 
 //include <stethoscope_addon_mount.scad>;
-
-module keyway(width, height, waist, depth){
-    // keyway is code to handle making a keyway to easily switch out addons
-
-    rotate(a = 90, v = [0, 1, 0]){
-        linear_extrude(height = depth, center = true)
-        polygon(points = [
-                [-width/2, -height/2],
-                [0, -waist/2],
-                [width/2, -height/2],
-                [width/2, height/2],
-                [0, waist/2],
-                [-width/2, height/2]]
-        );
-    }
-}
-
-module clip($fn = 36){
-    //translate([0, 0, -14.5]){
-    //    rotate([0, 45, 0]){
-    //        //cube([10, 8, 2], center = true);
-    //        cylinder(h = 7, r = 4);
-    //    }
-    //}
-
-
-    difference(){
-        intersection(){
-
-          translate([-0.25, 0, -12]){
-
-              rotate([0, 90, 0]){
-                  //difference(){
-                      cylinder(h = 25, r = 4);
-
-                  //}
-              }
-          }
-
-           translate([2, 0, -12]){
-              rotate([0, 45, 0]){
-                  //cylinder(h = 11, r = 4);
-                  cube([10, 8, 20], center = true);
-              }
-          }
-
-        }
-        translate([-10, 0, -12]){
-            rotate([0, 90, 0]){
-                cylinder(h = 30, r = 3);
-            }
-        }
-        
-        translate([0, 0, -15]){
-            cube([15, 4, 5], center = true);
-        }
-    }
-    
-    
-    
-
-
-}
+use <utilities.scad>;
 
 translate([3, 0, -5/2]) {
    keyway(5 - $tolerence, 20 - $tolerence, 15 - $tolerence, 29 + 3);
@@ -79,5 +17,3 @@ translate([6, 0, -8 - $tolerence/2]) {
    cube([26, 8, 2], center = true);
 }
 
-clip();
-// mirror([0,1,0]) clip();
