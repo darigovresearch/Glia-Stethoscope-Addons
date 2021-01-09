@@ -1,5 +1,7 @@
 $outside_width = 42.125/2; //Radius of outside wall (mm)
 
+use <utilities.scad>;
+
 module reference_head($fn=360) {
     // reference stethoscope head as it was too complex to load into memory
     cylinder(h = 13, r = $outside_width);
@@ -21,22 +23,6 @@ module addon_holder($fn = 360){
     }
 }
 
-module keyway(width, height, waist, depth){
-    // keyway is code to handle making a keyway to easily switch out addons
-
-    rotate(a = 90, v = [0, 1, 0]){
-        linear_extrude(height = depth, center = true)
-        polygon(points = [
-                [-width/2, -height/2],
-                [0, -waist/2],
-                [width/2, -height/2],
-                [width/2, height/2],
-                [0, waist/2],
-                [-width/2, height/2]]
-        );
-    }
-}
-
 
 difference (){
     // Takes the difference between the reference head & the addon holder to get the right indentation
@@ -47,5 +33,4 @@ difference (){
         keyway(5, 20, 15, 30 + 3);
     }
     reference_head();
-
 }
