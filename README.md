@@ -25,7 +25,7 @@ Not sure what you could add on could go with the stethoscope? Below are some ide
 - [ ] Addon to be able to pick up audio of the heartbeat/lungs for remote monitoring/telemedicine or have a machine learning algorithm to pick up key vitals
   - Ideally would also use low cost hardware like headphone microphones 
 - [ ] Addon to be able to hold a "reflex hammer" or other items that a medical professional uses for core diagnostics hands free
-- [ ] Addon to clip on the [Glia Otoscope](https://github.com/GliaX/Otoscope) for hands free portability
+- [x] [Addon to clip](https://github.com/darigovresearch/Glia-Stethoscope-Addons/blob/main/source_files/stl/addon_otoscope_clip.stl) on the [Glia Otoscope](https://github.com/GliaX/Otoscope) for hands free portability
 - [ ] Addon to be able to plug in another Glia stethoscope for two people to monitor at the same time and for teaching purposes
 
 ## Contributing
